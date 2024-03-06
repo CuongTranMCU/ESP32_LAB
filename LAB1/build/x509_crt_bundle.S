@@ -1,4 +1,4 @@
-/* * Data converted from D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from F:/ESP32/Lab/ESP32_LAB/LAB1/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

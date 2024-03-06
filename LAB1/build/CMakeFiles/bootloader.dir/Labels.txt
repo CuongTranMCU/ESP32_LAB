@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/CMakeFiles/bootloader
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/CMakeFiles/bootloader.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/CMakeFiles/bootloader-complete.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/CMakeFiles/bootloader
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/CMakeFiles/bootloader.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/CMakeFiles/bootloader-complete.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

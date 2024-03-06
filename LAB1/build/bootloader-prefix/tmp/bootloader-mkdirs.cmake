@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader/subproject"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/tmp"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src"
-  "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp"
+  "F:/app/Esp_idf/esp-idf/esp-idf/components/bootloader/subproject"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/tmp"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src"
+  "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB1/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "F:/ESP32/Lab/ESP32_LAB/LAB1/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()
