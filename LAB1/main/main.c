@@ -4,7 +4,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#define LED_PIN 13
+#define LED_PIN 27
 
 void app_main(void)
 {
