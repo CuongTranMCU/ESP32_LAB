@@ -3,9 +3,7 @@
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
-#define LED_PIN 27
-
+#define LED_PIN 13
 void app_main(void)
 {
     esp_rom_gpio_pad_select_gpio(LED_PIN);
@@ -27,3 +25,4 @@ void app_main(void)
         vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 }
+    
