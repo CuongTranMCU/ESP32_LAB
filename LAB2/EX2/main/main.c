@@ -1,12 +1,11 @@
-#include <stdio.h>
 #include "ssd1306.h"
 #include "freertos/task.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
+#include "sdkconfig.h"
 static const char *TAG = "i2c-example";
 #define _I2C_NUMBER(num) I2C_NUM_0
 #define I2C_NUMBER(num) _I2C_NUMBER(num)
-
 #define DATA_LENGTH 512                  /*!< Data buffer length of test buffer */
 #define RW_TEST_LENGTH 128               /*!< Data length for r/w test, [0,DATA_LENGTH] */
 #define DELAY_TIME_BETWEEN_ITEMS_MS 1000 /*!< delay time between different test items */
@@ -49,10 +48,10 @@ void app_main(void)
     xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
 	vTaskDelay(1000/portTICK_PERIOD_MS);
 	xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		"    21521909", 6, NULL);
+		(void *)"    21521909 TVC", 6, NULL);
 	vTaskDelay(1000/portTICK_PERIOD_MS);
     xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		"\n    21521910", 6, NULL);
+		(void *)"\n    21521910 VCC", 6, NULL);
     ESP_LOGI(TAG,"FINISH");
     vTaskDelay(1000/portTICK_PERIOD_MS);
 }

@@ -7,7 +7,6 @@
 
 #ifndef MAIN_FONT8X8_BASIC_H_
 #define MAIN_FONT8X8_BASIC_H_
-
 /*
    Constant: font8x8_basic_tr
    Contains an 90 digree transposed 8x8 font map for unicode points 
@@ -37,6 +36,7 @@
 	}
 */
 
+// uint8_t font8x8_basic_tr[128][8];
 uint8_t font8x8_basic_tr[128][8] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },   // U+0000 (nul)
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },   // U+0001

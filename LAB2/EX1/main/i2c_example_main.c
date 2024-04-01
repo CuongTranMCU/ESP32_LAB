@@ -16,18 +16,12 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-#include "ssd1306.h"
-#include "freertos/task.h"
-#include "freertos/FreeRTOS.h"
-#include "freertos/event_groups.h"
+#include <stdio.h>
+#include "esp_log.h"
+#include "driver/i2c.h"
 static const char *TAG = "i2c-example";
 #define _I2C_NUMBER(num) I2C_NUM_0
 #define I2C_NUMBER(num) _I2C_NUMBER(num)
-
-#define DATA_LENGTH 512                  /*!< Data buffer length of test buffer */
-#define RW_TEST_LENGTH 128               /*!< Data length for r/w test, [0,DATA_LENGTH] */
-#define DELAY_TIME_BETWEEN_ITEMS_MS 1000 /*!< delay time between different test items */
-
 #define I2C_MASTTER_NUM 0
 
 #define I2C_MASTER_SCL_IO 22                                /*!< gpio number for I2C master clock */
@@ -36,8 +30,6 @@ static const char *TAG = "i2c-example";
 #define I2C_MASTER_FREQ_HZ CONFIG_I2C_MASTER_FREQUENCY        /*!< I2C master clock frequency */
 #define I2C_MASTER_TX_BUF_DISABLE 0                           /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE 0                           /*!< I2C master doesn't need buffer */
-
-
 static esp_err_t i2c_master_init(void)
 {
     int i2c_master_port = I2C_MASTER_NUM;                                           

@@ -14,5 +14,14 @@
     ],
     "idf.portWin": "COM5",
     "idf.pythonBinPathWin": "D:\\ESP3-IDF\\Espressif\\python_env\\idf5.1_py3.11_env\\Scripts\\python.exe",
-    "idf.toolsPathWin": "D:\\ESP3-IDF\\Espressif"
+    "idf.toolsPathWin": "D:\\ESP3-IDF\\Espressif",
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "ssd1306.h": "c",
+        "task.h": "c",
+        "event_groups.h": "c",
+        "freertos.h": "c",
+        "sdkconfig.h": "c",
+        "font8x8_basic.h": "c"
+    }
 }
