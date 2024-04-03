@@ -38,6 +38,7 @@ static esp_err_t i2c_master_init(void)
     }
     return i2c_driver_install(i2c_master_port, conf.mode, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 }
+// extern uint8_t font8x8_avatar;
 void app_main(void)
 {
     ESP_LOGI(TAG,"Initialize I2C Master");
@@ -46,12 +47,8 @@ void app_main(void)
     ESP_LOGI(TAG,"Intitialize OLED");
     ssd1306_init();
     xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
-	vTaskDelay(1000/portTICK_PERIOD_MS);
+	vTaskDelay(100/portTICK_PERIOD_MS);
 	xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		(void *)"    21521909 TVC", 6, NULL);
-	vTaskDelay(1000/portTICK_PERIOD_MS);
-    xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		(void *)"\n    21521910 VCC", 6, NULL);
+		(void *)"    21521909\n\n    21521910", 6, NULL);
     ESP_LOGI(TAG,"FINISH");
-    vTaskDelay(1000/portTICK_PERIOD_MS);
 }

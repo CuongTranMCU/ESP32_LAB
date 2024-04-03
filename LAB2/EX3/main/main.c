@@ -47,11 +47,7 @@ void app_main(void)
     ssd1306_init();
     xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
 	vTaskDelay(1000/portTICK_PERIOD_MS);
-	xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		(void *)"    21521909", 6, NULL);
-	vTaskDelay(1000/portTICK_PERIOD_MS);
-    xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-		(void *)"\n    21521910", 6, NULL);
+    xTaskCreate(&task_ssd1306_display_image, "task_ssd1306_display_image",  2048, NULL, 6, NULL);
+	vTaskDelay(100/portTICK_PERIOD_MS);
     ESP_LOGI(TAG,"FINISH");
-    vTaskDelay(1000/portTICK_PERIOD_MS);
 }
