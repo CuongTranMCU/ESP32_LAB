@@ -66,17 +66,16 @@ typedef struct {
 
 static prepare_type_env_t prepare_write_env;
 
-//#define CONFIG_SET_RAW_ADV_DATA
+#define CONFIG_SET_RAW_ADV_DATA
 #ifdef CONFIG_SET_RAW_ADV_DATA
 static uint8_t raw_adv_data[] = {
         /* flags */
         0x02, 0x01, 0x06,
-        /* tx power*/
-        0x02, 0x0a, 0xeb,
         /* service uuid */
         0x03, 0x03, 0xFF, 0x00,
+        0X04,0xFF,'5','0','%',
         /* device name */
-        0x0E, 0x09, 'B', 'L', 'E', '_', 'C', 'O','M', 'P', '_', 'T','E', 'S', 'T'
+        0x09, 0x09, 'S','E','L','E','-','O','F','F'
 };
 static uint8_t raw_scan_rsp_data[] = {
         /* flags */
@@ -526,13 +525,13 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_
                     }
 
                 }
-                if(gatt_db_handle_table[IDX_CHAR_VAL_A] == param->write.handle && param->write.len == 2) {
-                    uint8_t write_data[2] = {0x88, 0x99};
-                    if(memcmp(write_data, param->write.value, param->write.len) == 0) {
+                if(gatt_db_handle_table[IDX_CHAR_VAL_A] == param->write.handle && param->write.len == 8) {
+                    uint8_t write_data[2][8] =  {{'2', '1','5','2','1','9','0','9'},
+                                                {'2','1','5','2','1','9','1','0'}};
+                    if(memcmp(write_data[0], param->write.value, param->write.len) == 0 || memcmp(write_data[1], param->write.value, param->write.len) == 0) {
                         ESP_LOGI(EXAMPLE_TAG, "(3)***** short write success ***** \n");
                     }
                 }
-
                 /* send response when param->write.need_rsp is true*/
                 if (param->write.need_rsp){
                     esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
