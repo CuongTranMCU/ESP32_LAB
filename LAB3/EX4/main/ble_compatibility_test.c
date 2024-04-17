@@ -24,7 +24,7 @@
 #include "esp_bt_main.h"
 #include "ble_compatibility_test.h"
 #include "esp_gatt_common_api.h"
-
+#include "ssd1306.h"
 #define DEBUG_ON  0
 
 #if DEBUG_ON
@@ -38,7 +38,7 @@
 #define PROFILE_NUM                 1
 #define PROFILE_APP_IDX             0
 #define ESP_APP_ID                  0x55
-#define SAMPLE_DEVICE_NAME          "BLE_COMP_TEST"
+#define SAMPLE_DEVICE_NAME          "NHOM1_LOP2"
 #define SVC_INST_ID                 0
 
 /* The max length of characteristic value. When the gatt client write or prepare write,
@@ -65,6 +65,18 @@ typedef struct {
 } prepare_type_env_t;
 
 static prepare_type_env_t prepare_write_env;
+// SSD1306
+SSD1306_t dev;
+int page = 0;
+void initOLED()
+{
+	i2c_master_init(&dev,CONFIG_SDA_GPIO,CONFIG_SCL_GPIO,CONFIG_RESET_GPIO);
+	ssd1306_init(&dev,128,64);
+	ssd1306_clear_screen(&dev,false);
+    ssd1306_display_text(&dev,page,"MSSV:",5,false);
+	ssd1306_contrast(&dev,0xff);
+    page +=2;
+}
 
 //#define CONFIG_SET_RAW_ADV_DATA
 #ifdef CONFIG_SET_RAW_ADV_DATA
@@ -529,8 +541,16 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_
                 if(gatt_db_handle_table[IDX_CHAR_VAL_A] == param->write.handle && param->write.len == 8) {
                     uint8_t write_data[2][8] =  {{'2', '1','5','2','1','9','0','9'},
                                                 {'2','1','5','2','1','9','1','0'}};
-                    if(memcmp(write_data[0], param->write.value, param->write.len) == 0 || memcmp(write_data[1], param->write.value, param->write.len) == 0) {
+                    if( memcmp(write_data[0], param->write.value, param->write.len) == 0) {
+                        ssd1306_display_text(&dev, page, (char *)write_data[0], 8, false);
                         ESP_LOGI(EXAMPLE_TAG, "(3)***** short write success ***** \n");
+                        page += 2;
+                    }
+                    else if( memcmp(write_data[1], param->write.value, param->write.len) == 0)
+                    {
+                        ssd1306_display_text(&dev, page, (char *)write_data[1], 8, false);
+                        ESP_LOGI(EXAMPLE_TAG, "(3)***** short write success ***** \n");
+                        page += 2;
                     }
                 }
 
@@ -675,6 +695,8 @@ void app_main(void)
     if (local_mtu_ret){
         ESP_LOGE(EXAMPLE_TAG, "set local  MTU failed, error code = %x", local_mtu_ret);
     }
+    // SSD1306:
+    initOLED();
 
     /* set the security iocap & auth_req & key size & init key response key parameters to the stack*/
     esp_ble_auth_req_t auth_req = ESP_LE_AUTH_REQ_SC_MITM_BOND;     //bonding with peer device after authentication
