@@ -1,6 +1,13 @@
 LAB1/build/
 LAB1/.vscode/
+LAB2/build/
+LAB2/.vscode/
 LAB3/build/
 LAB3/.vscode/
+LAB4/.vscode/
+LAB4/build/
+LAB5/esp_idf/.vscode/
+LAB5/esp_idf/build/
+LAB5/esp_idf/.devcontainer/
 .vscode/
 
