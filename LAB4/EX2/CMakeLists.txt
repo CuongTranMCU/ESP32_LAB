@@ -3,5 +3,8 @@
 cmake_minimum_required(VERSION 3.16)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-set(EXTRA_COMPONENT_DIRS ssd1306)
-project(EX4)
+set(EXTRA_COMPONENT_DIRS $ENV{IDF_PATH}/examples/common_components/protocol_examples_common )
+
+project(EX2)
+target_compile_options(${lib} PRIVATE -Wno-error=format)
+

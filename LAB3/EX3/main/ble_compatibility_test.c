@@ -526,12 +526,12 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_
 
                 }
                 if(gatt_db_handle_table[IDX_CHAR_VAL_A] == param->write.handle && param->write.len == 8) {
-                    uint8_t write_data[2][8] =  {{'2', '1','5','2','1','9','0','9'},
-                                                {'2','1','5','2','1','9','1','0'}};
-                    if(memcmp(write_data[0], param->write.value, param->write.len) == 0 || memcmp(write_data[1], param->write.value, param->write.len) == 0) {
+                    uint8_t write_data[8] = {0x88, 0x99};
+                    if(memcmp(write_data, param->write.value, param->write.len) == 0) {
                         ESP_LOGI(EXAMPLE_TAG, "(3)***** short write success ***** \n");
                     }
                 }
+
                 /* send response when param->write.need_rsp is true*/
                 if (param->write.need_rsp){
                     esp_ble_gatts_send_response(gatts_if, param->write.conn_id, param->write.trans_id, ESP_GATT_OK, NULL);
