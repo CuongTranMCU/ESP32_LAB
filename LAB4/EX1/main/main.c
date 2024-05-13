@@ -22,12 +22,13 @@
 #include "mqtt_client.h"
 
 static const char *TAG = "MQTT_EXAMPLE";
-#define  EXAMPLE_ESP_WIFI_SSID "Kim phung"
-#define  EXAMPLE_ESP_WIFI_PASS "11111111"
+#define  EXAMPLE_ESP_WIFI_SSID "Ebisu"
+#define  EXAMPLE_ESP_WIFI_PASS "matmapassword"
 #define MAX_RETRY 10
 static int retry_cnt = 0;
 
 uint32_t MQTT_CONNEECTED = 0;
+
 
 static void mqtt_app_start(void);
 
@@ -110,10 +111,10 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
         MQTT_CONNEECTED=1;
         
-        msg_id = esp_mqtt_client_subscribe(client, "/topic/test1", 0);
+        msg_id = esp_mqtt_client_subscribe(client, "humidity", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
 
-        msg_id = esp_mqtt_client_subscribe(client, "/topic/test2", 1);
+        msg_id = esp_mqtt_client_subscribe(client, "temperature", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
         break;
     case MQTT_EVENT_DISCONNECTED:
@@ -132,8 +133,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         break;
     case MQTT_EVENT_DATA:
         ESP_LOGI(TAG, "MQTT_EVENT_DATA");
-        printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
-        printf("DATA=%.*s\r\n", event->data_len, event->data);
+        printf("TOPIC = %.*s\r\n", event->topic_len, event->topic);
+        printf("DATA = %.*s\r\n", event->data_len, event->data);
         break;
     case MQTT_EVENT_ERROR:
         ESP_LOGI(TAG, "MQTT_EVENT_ERROR");
@@ -149,7 +150,7 @@ static void mqtt_app_start(void)
 {
     ESP_LOGI(TAG, "STARTING MQTT");
     esp_mqtt_client_config_t mqttConfig = {
-       .broker.address.uri = "wss://mqtt.flespi.io",
+        .broker.address.uri = "mqtt://mqtt.flespi.io",
         .credentials.username = "oiGjHdBbBIvM0gOgrc0oLFTFt5ev1frmO6r8SOQURW1Gr7qYjFflB5IdeKutDcUk"};
     client = esp_mqtt_client_init(&mqttConfig);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, client);
@@ -162,9 +163,12 @@ void Publisher_Task(void *params)
   {
     if(MQTT_CONNEECTED)
     {
-        esp_mqtt_client_publish(client, "/topic/test3", "Helllo World", 0, 0, 0);
+        
+        esp_mqtt_client_publish(client, "temperature","40", 0, 0, 0);
+        esp_mqtt_client_publish(client, "humidity","80", 0, 0, 0);
+
     }
-    vTaskDelay(15000 / portTICK_PERIOD_MS);
+    vTaskDelay(5000 / portTICK_PERIOD_MS);
   }
 }
 
