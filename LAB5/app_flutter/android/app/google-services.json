@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "675819687141",
+    "firebase_url": "https://miniprojecy-default-rtdb.firebaseio.com",
+    "project_id": "miniprojecy",
+    "storage_bucket": "miniprojecy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675819687141:android:39c04fcc48c229bba4180c",
+        "android_client_info": {
+          "package_name": "com.example.app_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz_XCRf-kN7_MomSsKtkFQGtC6pRaJkM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
