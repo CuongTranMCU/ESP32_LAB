@@ -5,10 +5,10 @@ packages:
     dependency: transitive
     description:
       name: _flutterfire_internals
-      sha256: f5628cd9c92ed11083f425fd1f8f1bc60ecdda458c81d73b143aeda036c35fe7
+      sha256: "2350805d7afefb0efe7acd325cb19d3ae8ba4039b906eade3807ffb69938a01f"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.16"
+    version: "1.3.33"
   async:
     dependency: transitive
     description:
@@ -69,10 +69,17 @@ packages:
     dependency: "direct main"
     description:
       name: firebase_core
+<<<<<<< HEAD
+      sha256: "372d94ced114b9c40cb85e18c50ac94a7e998c8eec630c50d7aec047847d27bf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.31.0"
+=======
       sha256: "96607c0e829a581c2a483c658f04e8b159964c3bae2730f73297070bc85d40bb"
       url: "https://pub.dev"
     source: hosted
     version: "2.24.2"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   firebase_core_platform_interface:
     dependency: transitive
     description:
@@ -85,34 +92,62 @@ packages:
     dependency: transitive
     description:
       name: firebase_core_web
+<<<<<<< HEAD
+      sha256: "43d9e951ac52b87ae9cc38ecdcca1e8fa7b52a1dd26a96085ba41ce5108db8e9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.17.0"
+=======
       sha256: d585bdf3c656c3f7821ba1bd44da5f13365d22fcecaf5eb75c4295246aaa83c0
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   firebase_database:
     dependency: "direct main"
     description:
       name: firebase_database
+<<<<<<< HEAD
+      sha256: "59c711cce8e998389b45723f68b0dad65bbfad77acd634ce2c562049aeab1a5e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.5.5"
+=======
       sha256: "8568ad41f9312ab1f162f70c1e3e7cb7420b8bc8d07e4d543e575bb0cb41f8a5"
       url: "https://pub.dev"
     source: hosted
     version: "10.4.0"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   firebase_database_platform_interface:
     dependency: transitive
     description:
       name: firebase_database_platform_interface
+<<<<<<< HEAD
+      sha256: "76c3e9d8f00c7e7bc1acd957dc29ac5696d67611fda38cf1371159b3c840a5e7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.5+33"
+=======
       sha256: "4366ade2390f8799a317bb13af29c2a1fdfc84f4d04372094756b86a6cbfd305"
       url: "https://pub.dev"
     source: hosted
     version: "0.2.5+16"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   firebase_database_web:
     dependency: transitive
     description:
       name: firebase_database_web
+<<<<<<< HEAD
+      sha256: d5795e387f507e20146f689ddddb4674451492fbd513744c9513faaab761cad7
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.5+5"
+=======
       sha256: "4920a83b917493b37fd408cbb01c289ef8a422d9ed48982f908a9850290262f9"
       url: "https://pub.dev"
     source: hosted
     version: "0.2.3+16"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   flutter:
     dependency: "direct main"
     description: flutter
@@ -136,7 +171,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
+  leak_tracker:
+=======
   js:
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
     dependency: transitive
     description:
       name: js
@@ -183,7 +222,11 @@ packages:
       sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
+    version: "1.9.0"
+=======
     version: "1.8.3"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -260,7 +303,21 @@ packages:
       sha256: dc8ccd225a2005c1be616fe02951e2e342092edf968cf0844220383757ef8f10
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
+    version: "13.0.0"
+  web:
+    dependency: transitive
+    description:
+      name: web
+      sha256: "97da13628db363c635202ad97068d47c5b8aa555808e7a9411963c533b449b27"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
+sdks:
+  dart: ">=3.3.3 <4.0.0"
+=======
     version: "0.1.4-beta"
 sdks:
   dart: ">=3.1.2 <4.0.0"
+>>>>>>> 0ab17391cad41fc736ee6cc3ffe3e5d613d1fb33
   flutter: ">=3.3.0"
