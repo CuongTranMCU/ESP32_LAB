@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "687785053806",
+    "firebase_url": "https://temperature-31bfa-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "temperature-31bfa",
+    "storage_bucket": "temperature-31bfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687785053806:android:b22cafea4e19e1a88ba07f",
+        "android_client_info": {
+          "package_name": "com.example.app_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmL3Dj9F1VvAS1XdGEBBcpms1eCeMIT0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
