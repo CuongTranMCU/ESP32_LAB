@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "wifi.h": "c",
+        "dht11.h": "c",
+        "mqtt.h": "c"
+    }
+}
