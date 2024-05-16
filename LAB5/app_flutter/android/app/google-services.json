@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "858867295458",
+    "firebase_url": "https://temperature-96805-default-rtdb.firebaseio.com",
+    "project_id": "temperature-96805",
+    "storage_bucket": "temperature-96805.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858867295458:android:7cb52b537cd2ed3720eabb",
+        "android_client_info": {
+          "package_name": "com.example.app_temperature"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMBMSI3hPpcl8bMDZaQDXQxcO6Kx08f0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
