@@ -31,7 +31,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
-        MQTT_CONNEECTED =1;
+        MQTT_CONNEECTED = 1;
 
         msg_id = esp_mqtt_client_subscribe(client, "temperature", 0);
         ESP_LOGI(TAG, "sent subscribe successful, msg_id=%d", msg_id);
@@ -41,7 +41,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
 
     case MQTT_EVENT_DISCONNECTED:
         ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
-        MQTT_CONNEECTED=0;
+        MQTT_CONNEECTED = 0;
         break;
 
     case MQTT_EVENT_SUBSCRIBED:
@@ -81,7 +81,6 @@ esp_mqtt_client_handle_t get_mqtt_client_handle(void)
     return global_client;
 }
 
-
 char *convert_model_sensor_to_json(int temperature, int humidity)
 {
     // create a new cJSON object
@@ -104,8 +103,6 @@ char *convert_model_sensor_to_json(int temperature, int humidity)
     return json_str;
 }
 
-
-
 void mqtt_data_publish_callback(const char *data)
 {
 
@@ -113,7 +110,7 @@ void mqtt_data_publish_callback(const char *data)
     if (client != NULL)
     {
         // Gửi dữ liệu lên broker MQTT với chủ đề là "data"
-        int msg_id = esp_mqtt_client_publish(client, "data", data, 0, 0, 0);
+        int msg_id = esp_mqtt_client_publish(client, "SendData", data, 0, 0, 0);
         if (msg_id < 0)
         {
             ESP_LOGE(TAG, "Failed to publish data to MQTT broker");

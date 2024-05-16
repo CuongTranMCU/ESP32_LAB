@@ -18,28 +18,29 @@ void Publisher_Task(void *params)
     // DHT11
     int temp = DHT11_read().temperature;
     int hum = DHT11_read().humidity;
-    if(MQTT_CONNEECTED)
+    if (MQTT_CONNEECTED)
     {
-        esp_mqtt_client_handle_t client = get_mqtt_client_handle();
-        char *json_data = convert_model_sensor_to_json(temp,hum);
-        mqtt_data_publish_callback(json_data);
-        free(json_data);
+      esp_mqtt_client_handle_t client = get_mqtt_client_handle();
+      char *json_data = convert_model_sensor_to_json(temp, hum);
+      mqtt_data_publish_callback(json_data);
+      free(json_data);
     }
-    vTaskDelay(5000 / portTICK_PERIOD_MS);
+    vTaskDelay(10000 / portTICK_PERIOD_MS);
   }
 }
 void app_main(void)
 {
-     esp_err_t err;
+  esp_err_t err;
 
-    ESP_LOGI(TAG, "Initializing...");
+  ESP_LOGI(TAG, "Initializing...");
+  err = nvs_flash_init();
+  if (err == ESP_ERR_NVS_NO_FREE_PAGES)
+  {
+    ESP_ERROR_CHECK(nvs_flash_erase());
     err = nvs_flash_init();
-    if (err == ESP_ERR_NVS_NO_FREE_PAGES) {
-        ESP_ERROR_CHECK(nvs_flash_erase());
-        err = nvs_flash_init();
-    }
-    ESP_ERROR_CHECK(err);
-    wifi_init_sta();
-    DHT11_init(GPIO_NUM_19);
-    xTaskCreate(Publisher_Task, "Publisher_Task", 1024 * 5, NULL, 5, NULL);
+  }
+  ESP_ERROR_CHECK(err);
+  wifi_init_sta();
+  DHT11_init(GPIO_NUM_5);
+  xTaskCreate(Publisher_Task, "Publisher_Task", 1024 * 5, NULL, 5, NULL);
 }
