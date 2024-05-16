@@ -15,8 +15,8 @@
 
 #include "mqtt.h"
 
-#define EXAMPLE_ESP_WIFI_SSID "A06.15"
-#define EXAMPLE_ESP_WIFI_PASS "hoihuecon"
+#define EXAMPLE_ESP_WIFI_SSID "Ebisu"
+#define EXAMPLE_ESP_WIFI_PASS "matmapassword"
 #define EXAMPLE_ESP_MAXIMUM_RETRY 5
 #define WIFI_AUTH_WPA2_PSK 1
 
