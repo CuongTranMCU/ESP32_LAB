@@ -110,7 +110,7 @@ void mqtt_data_publish_callback(const char *data)
     if (client != NULL)
     {
         // Gửi dữ liệu lên broker MQTT với chủ đề là "data"
-        int msg_id = esp_mqtt_client_publish(client, "SendData", data, 0, 0, 0);
+        int msg_id = esp_mqtt_client_publish(client, "data", data, 0, 0, 0);
         if (msg_id < 0)
         {
             ESP_LOGE(TAG, "Failed to publish data to MQTT broker");

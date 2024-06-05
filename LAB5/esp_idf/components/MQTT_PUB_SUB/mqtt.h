@@ -36,7 +36,7 @@
 #define EXAMPLE_ESP_MQQT_BORKER_URI "mqtt://mqtt.flespi.io"
 #define EXAMPLE_ESP_MQQT_BORKER_PORT 1883
 #define EXAMPLE_ESP_MQQT_BORKER_TRANSPORT MQTT_TRANSPORT_OVER_TCP
-#define EXAMPLE_ESP_MQQT_CREDENTIALS_USERNAME "NLbaNpU1SUgaBhQSS9duq2LMgV4JaCCdRIDNBRz6b3eElk0iGfBUULPU9E52R1AC"
+#define EXAMPLE_ESP_MQQT_CREDENTIALS_USERNAME "oiGjHdBbBIvM0gOgrc0oLFTFt5ev1frmO6r8SOQURW1Gr7qYjFflB5IdeKutDcUk"
 esp_mqtt_client_handle_t get_mqtt_client_handle(void);
 extern uint32_t MQTT_CONNEECTED;
 void mqtt_data_publish_callback(const char *data);
