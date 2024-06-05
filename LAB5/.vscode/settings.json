@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ssd1306.h": "c",
+        "dht11.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled",
+    "cmake.sourceDirectory": "D:/NAM3/KI 2/DESIGN_WIRELESS_EMBEDDED_SYSTEM/PRACTICE/EXERCISES/LAB5/app_flutter/linux"
+}
