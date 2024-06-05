@@ -15,11 +15,11 @@ static const char *TAG = "DEVICE";
 uint32_t MQTT_CONNEECTED = 0;
 void initOLED()
 {
-	i2c_master_init(&dev,CONFIG_SDA_GPIO,CONFIG_SCL_GPIO,CONFIG_RESET_GPIO);
-	ssd1306_init(&dev,128,64);
-	ssd1306_clear_screen(&dev,false);
-	ssd1306_contrast(&dev,0xff);
-    page +=2;
+  i2c_master_init(&dev, CONFIG_SDA_GPIO, CONFIG_SCL_GPIO, CONFIG_RESET_GPIO);
+  ssd1306_init(&dev, 128, 64);
+  ssd1306_clear_screen(&dev, false);
+  ssd1306_contrast(&dev, 0xff);
+  page += 2;
 }
 
 void Publisher_Task(void *params)
@@ -27,7 +27,7 @@ void Publisher_Task(void *params)
   while (true)
   {
     // DHT11
-    ssd1306_clear_screen(&dev,false);
+    ssd1306_clear_screen(&dev, false);
     int temp = DHT11_read().temperature;
     int hum = DHT11_read().humidity;
     char humidity[20];
@@ -47,12 +47,6 @@ void Publisher_Task(void *params)
     page = 0;
     vTaskDelay(10000 / portTICK_PERIOD_MS);
   }
-}
-
-void DisplayOled()
-{
-  ssd1306_init();
-  task_ssd1306_display_text();
 }
 
 void app_main(void)
