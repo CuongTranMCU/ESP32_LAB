@@ -28,6 +28,13 @@ void Publisher_Task(void *params)
     vTaskDelay(10000 / portTICK_PERIOD_MS);
   }
 }
+
+void DisplayOled()
+{
+  ssd1306_init();
+  task_ssd1306_display_text();
+}
+
 void app_main(void)
 {
   esp_err_t err;
